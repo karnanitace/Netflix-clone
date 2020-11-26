@@ -20,7 +20,7 @@ const App = () => {
     <div className="App">
       <Nav />
       <Banner />
-      <Detail showModal={showModal} setShowModal={setShowModal} movie={movieD}  />
+      <Detail showModal={showModal} setShowModal={setShowModal} movie={movieD} />
       <Row
         title="NETFLIX ORIGINALS"
         fetchURL={requests.fetchNetflixOriginals}

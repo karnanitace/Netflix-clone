@@ -1,7 +1,8 @@
-import React,{ useRef } from "react";
+import React,{ useRef, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 
 const Detail = ({showModal, setShowModal, movie}) => {
+  
 
   const animation = useSpring({
     config: {
@@ -20,13 +21,14 @@ const Detail = ({showModal, setShowModal, movie}) => {
     
   }
 
+
   return (
       <>
       {showModal && (
         <div className="modal-background" ref={modalRef} onClick={closeModal}>
           <animated.div style={animation}>
             <div className="modal-wrapper">
-                <h3>Movie : {movie.name}</h3>
+                <h3>Movie : {movie?.name || movie?.title}</h3>
                 <p><strong> Overview</strong> : {movie.overview}</p>
                 <p><strong>Rating</strong> : {`${movie.vote_average}`}/10</p>
                 <button onClick={() => setShowModal(!showModal)}>x</button>
